@@ -18,6 +18,10 @@ DiscreteFunction::DiscreteFunction(std::vector<double> y, double x_min, double x
     delta_x = (x_max - x_min) / (ys.size()-1);
 }
 
+void DiscreteFunction::setTrapeziumIntegrator(std::unique_ptr<TrapeziumIntegrator> ptr) {
+    integrator = std::move(ptr);
+}
+
 double DiscreteFunction::integrate()
 {
     return integrator->integrate(delta_x, ys);
