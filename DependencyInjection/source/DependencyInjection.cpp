@@ -12,9 +12,10 @@ int main()
         ys[i] = x*x;
     }   
     DiscreteFunction DF(ys, 0, 1);
-    DF.setTrapeziumIntegrator(std::make_unique<TrapeziumIntegrator>());
-
-    std::cout << DF.integrate() << std::endl;
+    DF.setIntegrator(std::make_unique<TrapeziumIntegrator>());
+    std::cout << "Trapezium Result: " << DF.integrate() << std::endl;
+    DF.setIntegrator(std::make_unique<SimpsonIntegrator>());
+    std::cout << "Simpson Result: " << DF.integrate() << std::endl;
 
     return 0;
 }
