@@ -14,13 +14,11 @@ int factorial(int n)
 
 void printProcessedFile(std::string fileName)
 {
-    FileManager file_mgr = FileManager(fileName);
-    int n = file_mgr.getData();
-    std::cout<<"Ok"<<std::endl;
-    while (n != EOF)
+    std::ifstream filestream = std::ifstream(fileName);
+    int n;
+    while (filestream >> n)
     {
         std::cout << n << "! = " << factorial(n) << std::endl;
-        n = file_mgr.getData();
     }
 }
 
