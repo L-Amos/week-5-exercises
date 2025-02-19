@@ -11,7 +11,7 @@ int main()
         double x = delta_x * i;
         ys[i] = x*x;
     }   
-    DiscreteFunction DF(ys, 0, 1);
+    DiscreteFunction DF(ys, 0, 1, std::make_unique<TrapeziumIntegrator>());
 
     std::cout << DF.integrate() << std::endl;
 

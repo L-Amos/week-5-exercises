@@ -23,7 +23,7 @@ class TrapeziumIntegrator
 class DiscreteFunction
 {
     public:
-    DiscreteFunction(std::vector<double> y, double x_min, double x_max);
+    DiscreteFunction(std::vector<double> y, double x_min, double x_max, std::unique_ptr<TrapeziumIntegrator> integrator_ptr);
 
     double integrate();
 
