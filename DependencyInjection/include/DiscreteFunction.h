@@ -24,6 +24,7 @@ class DiscreteFunction
 {
     public:
     DiscreteFunction(std::vector<double> y, double x_min, double x_max, std::unique_ptr<TrapeziumIntegrator> integrator_ptr);
+    DiscreteFunction(std::vector<double> y, double x_min, double x_max);
     void setTrapeziumIntegrator(std::unique_ptr<TrapeziumIntegrator> ptr);
     double integrate();
 
